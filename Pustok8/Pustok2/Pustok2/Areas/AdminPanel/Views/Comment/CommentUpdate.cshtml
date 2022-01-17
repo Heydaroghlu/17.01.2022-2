@@ -1,0 +1,31 @@
+﻿@model BookComment
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <h1>Update Comment</h1>
+    <div class="row">
+        <div class="col-lg-10">
+            <form method="post" asp-action="commentupdate" asp-controller="comment">
+                <div class="mb-3">
+                    <label asp-for="Rate" class="form-label">Rate count</label>
+                    <input class="form-control" asp-for="Rate">
+                    <span class="text-danger" asp-validation-for="Rate"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Status" class="form-label">Status</label>
+                    <input min="1" max="5" class="form-control" asp-for="Status">
+                    <span class="text-danger" asp-validation-for="Status"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="CommentTime" class="form-label">CommentTime</label>
+                    <input class="form-control" asp-for="CommentTime">
+                    <span class="text-danger" asp-validation-for="CommentTime"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update  Comment</button>
+            </form>
+        </div>
+    </div>
+</div>

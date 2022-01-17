@@ -1,0 +1,35 @@
+﻿@model List<Tag>
+<div class="container">
+    <div class="row">
+        <h1 style="color:blue">Tags</h1>
+        <a class="btn btn-primary" style="margin-left:60%;" asp-action="create" asp-controller="tag">Create</a>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="color:red" scope="col">Tag</th>
+                    <th style="color:red" scope="col">Book Tags</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="color:black">@item.Name</td>
+                        <td style="color:black">@item.BookTags.Count</td>
+                       
+                        <td>
+                            <a class="btn btn-success" asp-action="update" asp-controller="Tag" asp-route-id="@item.Id">Update</a>
+                            <a class="btn btn-danger delete-btn2" data-id="@item.Id" data-name="Tag" asp-route-id="@item.Id">Delete</a>
+
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

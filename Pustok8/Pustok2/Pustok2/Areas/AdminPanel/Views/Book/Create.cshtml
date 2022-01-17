@@ -1,0 +1,38 @@
+﻿@model Book
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10">
+            <form method="post" asp-action="create" asp-controller="book">
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">Book-Name</label>
+                    <input type="text" class="form-control"asp-for="Name">
+                    <label asp-for="Genre.Name" class="form-label">Genre-Name</label>
+                    <input type="text" class="form-control" asp-for="Genre.Name">
+                    <label for="author" class="form-label">Author-Name</label>
+                    <input type="text" class="form-control" name="author" id="author" aria-describedby="emailHelp">
+                    <label for="code" class="form-label">Code</label>
+                    <input type="text" class="form-control" name="code" id="code" aria-describedby="emailHelp">
+                    <label for="cost" class="form-label">Cost-Price</label>
+                    <input type="text" class="form-control" name="cost" id="cost" aria-describedby="emailHelp">
+                    <label for="sale" class="form-label">Sale-Price</label>
+                    <input type="text" class="form-control" name="sale" id="sale" aria-describedby="emailHelp">
+                    <label for="percent" class="form-label">Discount-Percent</label>
+                    <input type="text" class="form-control" name="percent" id="percent" aria-describedby="emailHelp">
+                    <label for="stock" class="form-label">Stock-Status</label>
+                    <input type="text" class="form-control" name="stock" id="stock" aria-describedby="emailHelp">
+                    <label for="isnew" class="form-label">IsNew</label>
+                    <input type="text" class="form-control" name="isnew" id="isnew" aria-describedby="emailHelp">
+                    <label for="feature" class="form-label">IsFeature</label>
+                    <input type="text" class="form-control" name="feature" id="feature" aria-describedby="emailHelp">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create New Book</button>
+            </form>
+        </div>
+    </div>
+</div>
+

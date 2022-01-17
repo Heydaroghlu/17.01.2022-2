@@ -1,0 +1,18 @@
+﻿@model Tag
+<div class="container">
+    <div class="row">
+        <h1>Update Tags</h1>
+    </div>
+    <div class="row">
+        <div class="col-10">
+            <form method="post" asp-action="update" asp-controller="tag"> 
+                <div class="form-group">
+                    <label asp-for="Name">Email address</label>
+                    <input asp-for="Name" class="form-control" placeholder="Enter new Tag">
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pustok2", "Pustok2\Pustok2.csproj", "{081FAB53-FB6A-450C-AE25-84069785747A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{081FAB53-FB6A-450C-AE25-84069785747A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{081FAB53-FB6A-450C-AE25-84069785747A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{081FAB53-FB6A-450C-AE25-84069785747A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{081FAB53-FB6A-450C-AE25-84069785747A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60CB357A-520A-4F17-A8D7-B6B69962D38B}
+	EndGlobalSection
+EndGlobal

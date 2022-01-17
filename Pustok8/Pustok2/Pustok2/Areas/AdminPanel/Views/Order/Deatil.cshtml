@@ -1,0 +1,83 @@
+﻿@model Order
+@using Pustok2.Enum;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+
+                    <h3>About User</h3>
+
+                    <h6 class="card-title">@Model.AppUser.FullName</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">@Model.AppUser.UserName</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">@Model.AppUser.Email</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">@Model.Phone</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">@Model.Country</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">@Model.City</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">@Model.Zipcode</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">@Model.Address1</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">@Model.Address2</h6>
+
+                    <h3>Order</h3>
+
+                    <h6 class="card-subtitle mb-2 text-muted">@Model.CreatedAt</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">@Model.TotalAmount </h6>
+                    <h6 class="card-subtitle mb-2 text-muted">@Model.CodeNumber </h6>
+                    <h6 class="card-subtitle mb-2 text-muted">@Model.DeliveryStatus </h6>
+                    <h6 class="card-subtitle mb-2 text-muted">@Model.Status</h6>
+
+
+                    <p class="card-text">@Model.Note</p>
+                    <form method="post" asp-action="reject">
+                        <input type="text" class="textarea" asp-for="Reject" />
+                        <input type="text" asp-for="Id" />
+                        @if (Model.Status == (OrderStatusEnum)3)
+                        {
+                            <button type="submit" asp-action="reject" asp-controller="order" class="btn btn-outline-danger reject-btn" style="pointer-events:none">Reject</button>
+                        }
+                        else
+                        {
+                            @if (!string.IsNullOrWhiteSpace(Model.Reject))
+                            {
+                                <button type="submit" asp-action="reject" asp-controller="order" class="btn btn-outline-danger">Reject</button>
+                            }
+                            else
+                            {
+                                <button type="submit" asp-action="reject" asp-controller="order" class="btn btn-outline-danger reject-btn" style="pointer-events:none">Reject</button>
+                            }
+                        }
+                        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                    </form>
+                    <a asp-action="edit" asp-controller="order" class="btn btn-warning">Edit</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+
+        @foreach (var item in Model.OrderItems)
+        {
+            <div class="col-lg-3 mx-4 my-1">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">Price : @item.CostPrice</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">SalePrice : @item.SalePrice</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Count : @item.Count</h6>
+                      
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+}

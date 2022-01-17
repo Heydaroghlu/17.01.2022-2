@@ -1,0 +1,38 @@
+﻿@model Setting
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <h1>Update Settings</h1>
+    <div class="row">
+        <div class="col-lg-10">
+            <form method="post" asp-action="update" asp-controller="service">
+                <div class="mb-3">
+                    <label asp-for="HeaderLogo" class="form-label">Genre Name</label>
+                    <input class="form-control" asp-for="HeaderLogo">
+                    <span class="text-danger" asp-validation-for="HeaderLogo"></span>
+                    <label asp-for="FooterLogo" class="form-label">Genre Name</label>
+                    <input class="form-control" asp-for="FooterLogo">
+                    <span class="text-danger" asp-validation-for="FooterLogo"></span>
+                    <label asp-for="Address" class="form-label">Genre Name</label>
+                    <input class="form-control" asp-for="Address">
+                    <span class="text-danger" asp-validation-for="Address"></span>
+                    <label asp-for="SupportPhone" class="form-label">Genre Name</label>
+                    <input class="form-control" asp-for="SupportPhone">
+                    <span class="text-danger" asp-validation-for="SupportPhone"></span>
+                    <label asp-for="Phone" class="form-label">Genre Name</label>
+                    <input class="form-control" asp-for="Phone">
+                    <span class="text-danger" asp-validation-for="Phone"></span>
+                    <label asp-for="Email" class="form-label">Genre Name</label>
+                    <input class="form-control" asp-for="Email">
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                   
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update  Settings</button>
+            </form>
+        </div>
+    </div>
+</div>
+

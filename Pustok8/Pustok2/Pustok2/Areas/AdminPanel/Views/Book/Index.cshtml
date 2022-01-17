@@ -1,0 +1,61 @@
+﻿@model List<Book>
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+
+<div class="container ">
+    <dv class="row">
+        <div class="col-lg-12">
+            <h1 style="float:left">Books</h1>
+            <a style="display:flex;margin-left:80%;width:80px" asp-action="create" asp-controller="book" class="btn btn-primary">Create</a>
+        </div>
+    </dv>
+    <row mx-auto>
+        <div class="col-lg-12">
+            <table class="table table-dark" style="width:100%">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Book-Name</th>
+                        <th scope="col">Genre-Name</th>
+                        <th scope="col">AuthorName</th>
+                        <th scope="col">Code</th>
+                        <th scope="col">CostPrice</th>
+                        <th scope="col">SalePrice</th>
+                        <th scope="col">Discount-Percent</th>
+                        <th scope="col">Stock-Status</th>
+                        <th scope="col">IsNew</th>
+                        <th scope="col">IsFeatured</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Book item in Model)
+                    {
+                        count++;
+                    <tr>
+                        <th scope="row">@count</th>
+                        <td>@item.Name</td>
+                        <td>@item.Genre.Name</td>
+                        <td>@item.Author.FullName</td>
+                        <td>@item.Code</td>
+                        <td>@item.CostPrice</td>
+                        <td>@item.SalePrice</td>
+                        <td>@item.DiscountPercent</td>
+                        <td>@item.StockStatus</td>
+                        <td>@item.IsNew</td>
+                        <td>@item.IsFeatured</td>
+
+                        <td>
+                            <a class="btn btn-danger delete-btn2" data-id="@item.Id" data-name="author" asp-route-id="@item.Id">Delete</a>
+                            <a class="btn btn-success">Update</a>
+                        </td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </row>
+</div>
+

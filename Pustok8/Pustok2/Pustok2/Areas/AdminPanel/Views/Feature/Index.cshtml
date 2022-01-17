@@ -1,0 +1,36 @@
+﻿@model List<Feature>
+<div class="container">
+    <div class="row">
+        <h1 style="color:blue">Features</h1>
+        <a class="btn btn-primary" style="margin-left:60%;" asp-action="create" asp-controller="feature">Create</a>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="color:red" scope="col">Title</th>
+                    <th style="color:red" scope="col">Text</th>
+                    <th style="color:red" scope="col">Icon</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td style="color:black">@item.Title</td>
+                    <td style="color:black">@item.Text</td>
+                    <td style="color:black">@item.Icon</td>
+
+                    <td>
+                        <a class="btn btn-success" asp-action="update" asp-controller="Feature" asp-route-id="@item.Id">Update</a>
+                        <a class="btn btn-danger delete-btn2" data-id="@item.Id" data-name="feature" asp-route-id="@item.Id">Delete</a>
+
+
+                    </td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+﻿@model List<Setting>
+<div class="container">
+    <div class="row">
+        <h1 style="color:blue">Settings</h1>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="color:red" scope="col">Header-Logo</th>
+                    <th style="color:red" scope="col">Footer-Logo</th>
+                    <th style="color:red" scope="col">Support-Phone</th>
+                    <th style="color:red" scope="col">Adress</th>
+                    <th style="color:red" scope="col">Phone</th>
+                    <th style="color:red" scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td style="color:black">@item.HeaderLogo</td>
+                    <td style="color:black">@item.FooterLogo</td>
+                    <td style="color:black">@item.SupportPhone</td>
+                    <td style="color:black">@item.Address</td>
+                    <td style="color:black">@item.Phone</td>
+                    <td style="color:black">@item.Email</td>
+                    <td>
+                        <a class="btn btn-success" asp-action="update" asp-controller="service" asp-route-id="@item.Id">Update</a>
+                    </td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿@model Feature
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10">
+            <form method="post" asp-action="create" asp-controller="feature">
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label">Author Name</label>
+                    <input class="form-control" asp-for="Title">
+                    <span class="text-danger" asp-validation-for="Title"></span>
+                    <label asp-for="Text" class="form-label">Author Name</label>
+                    <input class="form-control" asp-for="Text">
+                    <span class="text-danger" asp-validation-for="Text"></span>
+                    <label asp-for="Icon" class="form-label">Author Name</label>
+                    <input class="form-control" asp-for="Icon">
+                    <span class="text-danger" asp-validation-for="Icon"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create New Feature</button>
+            </form>
+        </div>
+    </div>
+</div>
+

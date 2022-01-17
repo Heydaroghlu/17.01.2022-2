@@ -1,0 +1,64 @@
+﻿@model BookComment
+<div class="rating-row pt-2">
+    <p class="d-block">Your Rating</p>
+    <span class="rating-widget-block">
+        <input type="radio" name="rate" id="star1" form="comment-add" value="5">
+        <label for="star1"></label>
+        <input type="radio" name="rate" id="star2" form="comment-add" value="4">
+        <label for="star2"></label>
+        <input type="radio" name="rate" id="star3" form="comment-add" value="3">
+        <label for="star3"></label>
+        <input type="radio" name="rate" id="star4" form="comment-add" value="2">
+        <label for="star4"></label>
+        <input type="radio" name="rate" id="star5" form="comment-add" value="1">
+        <label for="star5"></label>
+    </span>
+    <form asp-action="comment" method="post" id="comment-add" class="mt--15 site-form ">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="message">Comment</label>
+                    <textarea asp-for="Text" cols="30" rows="10"
+                              class="form-control"></textarea>
+                    <span asp-validation-for="Text"></span>
+
+                </div>
+            </div>
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label asp-for="FullName">Full Name *</label>
+                        <input type="text" id="name" class="form-control">
+                        <span asp-validation-for="FullName"></span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label asp-for="Email">Email *</label>
+                        <input type="text" id="email" class="form-control">
+                        <span asp-validation-for="Email"></span>
+
+                    </div>
+                </div>
+                <div class="submit-btn">
+                    <button types="submit" href="#" class="btn btn-black">Post Comment</button>
+                </div>
+
+
+            }
+            else
+            {
+
+                <div class="submit-btn">
+                    <button types="submit" href="#" class="btn btn-black">Post Comment</button>
+                </div>
+
+            }
+            <input type="hidden" name="bookId" class="form-control" value="@Model.BookId" />
+
+
+
+        </div>
+    </form>
+</div>
